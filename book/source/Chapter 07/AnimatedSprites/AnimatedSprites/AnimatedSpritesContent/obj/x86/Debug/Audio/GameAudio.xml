@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Sections>
+  <WaveBank Name="Wave Bank">Wave Bank
+{
+    Name = Wave Bank;
+    Xbox File = Xbox\Wave Bank.xwb;
+    Windows File = Win\Wave Bank.xwb;
+    Xbox Bank Path Edited = 0;
+    Windows Bank Path Edited = 0;
+    Seek Tables = 1;
+    Compression Preset Name = &lt;none&gt;;
+    Xbox Bank Last Modified Low = 0;
+    Xbox Bank Last Modified High = 0;
+    PC Bank Last Modified Low = 0;
+    PC Bank Last Modified High = 0;
+    Header Last Modified Low = 0;
+    Header Last Modified High = 0;
+    Bank Last Revised Low = 2066847526;
+    Bank Last Revised High = 30092821;
+
+    Wave
+    {
+        Name = start;
+        File = start.wav;
+        Build Settings Last Modified Low = 1188972056;
+        Build Settings Last Modified High = 30092812;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 154410;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 2913475355;
+            Last Modified High = 30092687;
+        }
+    }
+
+    Wave
+    {
+        Name = track;
+        File = track.wav;
+        Build Settings Last Modified Low = 1188982057;
+        Build Settings Last Modified High = 30092812;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 705600;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 2913605362;
+            Last Modified High = 30092687;
+        }
+    }
+
+    Wave
+    {
+        Name = skullcollision;
+        File = skullcollision.wav;
+        Build Settings Last Modified Low = 2032905585;
+        Build Settings Last Modified High = 30092821;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 89872;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 2913325346;
+            Last Modified High = 30092687;
+        }
+    }
+}
+
+</WaveBank>
+</Sections>

@@ -1,0 +1,11 @@
+C:\Users\Chirag\Documents\books\XNA\Chapter 07\AnimatedSprites\AnimatedSprites\AnimatedSprites\bin\x86\Debug\Content\Images\threerings.xnb
+C:\Users\Chirag\Documents\books\XNA\Chapter 07\AnimatedSprites\AnimatedSprites\AnimatedSprites\bin\x86\Debug\Content\Images\skullball.xnb
+C:\Users\Chirag\Documents\books\XNA\Chapter 07\AnimatedSprites\AnimatedSprites\AnimatedSprites\bin\x86\Debug\Content\Audio\GameAudio.xgs
+C:\Users\Chirag\Documents\books\XNA\Chapter 07\AnimatedSprites\AnimatedSprites\AnimatedSprites\bin\x86\Debug\Content\Audio\Wave Bank.xwb
+C:\Users\Chirag\Documents\books\XNA\Chapter 07\AnimatedSprites\AnimatedSprites\AnimatedSprites\bin\x86\Debug\Content\Audio\Sound Bank.xsb
+C:\Users\Chirag\Documents\books\XNA\Chapter 07\AnimatedSprites\AnimatedSprites\AnimatedSprites\bin\x86\Debug\AnimatedSprites.exe
+C:\Users\Chirag\Documents\books\XNA\Chapter 07\AnimatedSprites\AnimatedSprites\AnimatedSprites\bin\x86\Debug\AnimatedSprites.pdb
+C:\Users\Chirag\Documents\books\XNA\Chapter 07\AnimatedSprites\AnimatedSprites\AnimatedSprites\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Chirag\Documents\books\XNA\Chapter 07\AnimatedSprites\AnimatedSprites\AnimatedSprites\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Chirag\Documents\books\XNA\Chapter 07\AnimatedSprites\AnimatedSprites\AnimatedSprites\obj\x86\Debug\AnimatedSprites.exe
+C:\Users\Chirag\Documents\books\XNA\Chapter 07\AnimatedSprites\AnimatedSprites\AnimatedSprites\obj\x86\Debug\AnimatedSprites.pdb

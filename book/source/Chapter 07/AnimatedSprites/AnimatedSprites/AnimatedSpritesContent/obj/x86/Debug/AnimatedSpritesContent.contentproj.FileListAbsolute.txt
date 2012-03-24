@@ -1,0 +1,2 @@
+C:\Users\Chirag\Documents\books\XNA\Chapter 07\AnimatedSprites\AnimatedSprites\AnimatedSpritesContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Chirag\Documents\books\XNA\Chapter 07\AnimatedSprites\AnimatedSprites\AnimatedSpritesContent\obj\x86\Debug\Audio\GameAudio.xml
