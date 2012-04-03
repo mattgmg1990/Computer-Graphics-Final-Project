@@ -68,7 +68,7 @@ def generate_zero_array(width, height):
 # -----------------------------------------
 
 # Interpolates between all of the base_noise values using the specefied
-# interpolation function. Defaults to linear interpolation if none specefied
+# interpolation function. Defaults to linear interpolation if none specified
 def generate_smooth_noise_1d(base_noise, interpolation, octave):
 	if(interpolation == 'linear'):
 		interpolation_fun = linear_interpolation

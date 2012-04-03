@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS4300-Final-Project", "CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project.csproj", "{B6AEB5EE-0C64-4B29-829E-976AFC89ABA1}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "CS4300-Final-ProjectContent", "CS4300-Final-Project\CS4300-Final-ProjectContent\CS4300-Final-ProjectContent.contentproj", "{474FD647-36BD-4C9A-87B3-60B5DE878DE9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6AEB5EE-0C64-4B29-829E-976AFC89ABA1}.Debug|x86.ActiveCfg = Debug|x86
+		{B6AEB5EE-0C64-4B29-829E-976AFC89ABA1}.Debug|x86.Build.0 = Debug|x86
+		{B6AEB5EE-0C64-4B29-829E-976AFC89ABA1}.Release|x86.ActiveCfg = Release|x86
+		{B6AEB5EE-0C64-4B29-829E-976AFC89ABA1}.Release|x86.Build.0 = Release|x86
+		{474FD647-36BD-4C9A-87B3-60B5DE878DE9}.Debug|x86.ActiveCfg = Debug|x86
+		{474FD647-36BD-4C9A-87B3-60B5DE878DE9}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
