@@ -65,11 +65,10 @@ namespace CS4300_Final_Project
             device = graphics.GraphicsDevice;
             effect = Content.Load<Effect>("effects");
 
-            viewMatrix = Matrix.CreateLookAt(new Vector3(20, 13, -5), new Vector3(8, 0, -7), new Vector3(0, 1, 0));
-            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, device.Viewport.AspectRatio, 0.2f, 500.0f);
             mXWing.load(Content, effect);
 
-            mCamera = new Camera(device, viewMatrix);
+            Rectangle windowBounds = this.Window.ClientBounds;
+            mCamera = new Camera(new Vector3(0, 0, 5), new Vector3(0, 0, 1), new Vector3(0, 1, 0), windowBounds.Width, windowBounds.Height, device.Viewport.AspectRatio);
         }
 
         /// <summary>
@@ -94,7 +93,9 @@ namespace CS4300_Final_Project
 
             // TODO: Add your update logic here
             float timeDifference = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
-            //viewMatrix = mCamera.ProcessInput(timeDifference);
+            mCamera.processInput();
+            viewMatrix = mCamera.m_LookAtMatrix;
+            projectionMatrix = mCamera.m_ProjectionMatrix;
 
             base.Update(gameTime);
         }
