@@ -1,5 +1,9 @@
-import math
+from __future__ import division
+from __future__ import with_statement
+
 from random import random
+from math import floor
+
 # ------------------------------------------------------------------------
 # If you want to generate plots and experiment with the noise funciton,
 # you must install matplotlib. Instructions on how to do so can be found
@@ -21,7 +25,7 @@ def cosine_interpolation(a, b, x):
 
 # Returns a 3-tuple which is used as the input for the interpolation methods
 def sample_points(x, t, max_x):
-	x0 = x // t * t # '//' simply floors result of 'x / t'
+	x0 = int(floor(x / t)) * t
 	return x0, (x0 + t) % max_x, (x - x0) / t
 
 # -----------------------------------------
@@ -44,6 +48,21 @@ def generate_white_noise_2d(width, height):
 			noise[i].append(random())
 	return noise
 
+# Helper methods to get an array of zeros, given the length/dimensions
+def generate_zero_array(n):
+	arr = []
+	for i in range(n):
+		arr.append(0)
+	return arr
+
+def generate_zero_array(width, height):
+	arr = []
+	for i in range(width):
+		arr.append([])
+		for j in range(height):
+			arr[i].append(0)
+	return arr
+
 # -----------------------------------------
 # Smooth Noise Geneartion
 # -----------------------------------------
@@ -64,21 +83,26 @@ def generate_smooth_noise_1d(base_noise, interpolation, octave):
 		smooth_noise.append(interpolation_fun(base_noise[a], base_noise[b], x))
 	return smooth_noise
 
-def generate_smooth_noise_2d(base_noise, octave):
+# Generates smooth noise using linear interpolation.
+# Will implement using cosine interpolation sometime in the future...
+def generate_smooth_noise_2d(base_noise, k):
 
 	width = len(base_noise)
 	height = len(base_noise[0])
-	t = 2**octave
+	t = 2**k
 	smooth_noise = []
 
 	for i in range(width):	
 		smooth_noise.append([])
 		x0, x1, xalpha = sample_points(i, t, width)							
+
 		for j in range(height):
 			y0, y1, yalpha = sample_points(j, t, height)
-			a0 = (1 - xalpha)*base_noise[x0][y0] +(xalpha)*base_noise[x1][y0]
-			a1 = (1 - xalpha)*base_noise[x0][y1] + (xalpha)*base_noise[x1][y1]
+			a0 = linear_interpolation(base_noise[x0][y0], base_noise[x1][y0], xalpha)
+			a1 = linear_interpolation(base_noise[x0][y1], base_noise[x1][y1], xalpha)
+
 			smooth_noise[i].append(linear_interpolation(a0, a1, yalpha))
+
 	return smooth_noise
 
 # -----------------------------------------
@@ -93,9 +117,7 @@ def generate_smooth_noise_2d(base_noise, octave):
 
 def perlin_noise_1d(n, layers, persistence, interpolation='linear'):
 	base_noise = generate_white_noise_1d(n)
-	perlin_noise = []
-	for x in range(n):
-		perlin_noise.append(0)
+	perlin_noise = generate_zero_array(n)
 
 	amplitude = 1
 	total_amplitude = 0
@@ -111,14 +133,11 @@ def perlin_noise_1d(n, layers, persistence, interpolation='linear'):
 		perlin_noise[p] /= total_amplitude
 			
 	return perlin_noise
+
 			
 def perlin_noise_2d(width, height, layers, persistence):
 	base_noise = generate_white_noise_2d(width, height)
-	perlin_noise = []
-	for i in range(width):
-		perlin_noise.append([])
-		for j in range(height):
-			perlin_noise[i].append(0)
+	perlin_noise = generate_zero_array(width, height)
 
 	amplitude = 1
 	total_amplitude = 0
@@ -127,18 +146,12 @@ def perlin_noise_2d(width, height, layers, persistence):
 		total_amplitude += amplitude
 		smooth_noise = generate_smooth_noise_2d(base_noise, layers - k - 1)
 
-		for i in range(width):
-			for j in range(height):
-				perlin_noise[i][j] += smooth_noise[i][j] * amplitude
+		for a in range(width):
+			for b in range(height):
+				perlin_noise[a][b] += smooth_noise[a][b]*amplitude
 
-	for i in range(width):
-		for j in range(height):
-			perlin_noise[i][j] /= total_amplitude
+	for x in range(width):
+		for z in range(height):
+			perlin_noise[x][z] /= total_amplitude
 
 	return perlin_noise
-
-# Debugging...
-perlin_noise = perlin_noise_2d(20, 5, 6, .5)
-
-for p in perlin_noise:
-	print p
