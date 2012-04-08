@@ -134,7 +134,6 @@ def perlin_noise_1d(n, layers, persistence, interpolation='linear'):
 			
 	return perlin_noise
 
-			
 def perlin_noise_2d(width, height, layers, persistence):
 	base_noise = generate_white_noise_2d(width, height)
 	perlin_noise = generate_zero_array(width, height)
@@ -146,12 +145,13 @@ def perlin_noise_2d(width, height, layers, persistence):
 		total_amplitude += amplitude
 		smooth_noise = generate_smooth_noise_2d(base_noise, layers - k - 1)
 
-		for a in range(width):
-			for b in range(height):
-				perlin_noise[a][b] += smooth_noise[a][b]*amplitude
+		for i in range(width):
+			for j in range(height):
+				perlin_noise[i][j] += smooth_noise[i][j]*amplitude
 
-	for x in range(width):
-		for z in range(height):
-			perlin_noise[x][z] /= total_amplitude
+	for i in range(width):
+		for j in range(height):
+			perlin_noise[i][j] /= total_amplitude
 
 	return perlin_noise
+

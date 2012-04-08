@@ -3,19 +3,43 @@ from texture_gen import *
 
 from texture_gen import Gradient
 
-def demo_2d():
+def generate_cloud_texture():
 	w = h = 512
 	octaves = 9
-	persistence = 0.5
+	persistence = .5
 
 	print 'Making Perlin noise...'
 	p_noise = perlin_noise_2d(w, h, octaves, persistence)
 
-	print 'Generating texture...'
+	print 'Generating cloud texture...'
 	gradient = Gradient((0, 0, 1, 1), (1, 1, 1, 1))
 	color_grid = map_gradient(gradient, p_noise)
-	generate_texture(color_grid, 'sample_texture.png')
+	generate_texture(color_grid, 'cloud_texture.png')
 
 	print 'Done.'
 
-demo_2d()
+def wood_texture(width, height, layers):
+	perlin = perlin_noise_2d(width, height, layers, .15)
+
+	for i in range(width):
+		for j in range(height):
+			g = perlin[i][j] * 20
+			perlin[i][j] = g - int(g)
+	
+	return perlin
+
+def generate_wood_texture():
+	w = h = 512
+	octaves = 9
+
+	print 'Making Perlin noise ...'
+	p_noise = wood_texture(w, h, octaves)
+
+	print 'Generating wood texture...'
+	gradient = Gradient((.62, .32, .17, 1), (.38, .13, .07, 1))
+	color_grid = map_gradient(gradient, p_noise)
+	generate_texture(color_grid, 'wood_texture.png')
+
+	print 'Done.'
+
+generate_wood_texture()
