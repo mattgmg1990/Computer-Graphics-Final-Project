@@ -3,8 +3,9 @@ from texture_gen import *
 
 from texture_gen import Gradient
 
+# Generates a simple cloud texture from perlin_noise
 def generate_sample_textures():
-	w = h = 512
+	w = h = 256
 	octaves = 9
 
 	# generate cloud texture
@@ -20,6 +21,8 @@ def generate_sample_textures():
 	# generate_texture(color_grid, gradient)
 
 
+# writes perlin noise values to a text file. Each value is delimited by
+# a ' ' character and each row is delimited by a '\n' character
 def write_perlin_to_file(perlin, width, height):
 	f = open('perlin.txt', 'w')
 	for i in range(width):
@@ -32,6 +35,8 @@ def write_perlin_to_file(perlin, width, height):
 
 	f.close()
 
+# Simple prompt which gives user the option to generate sample perlin noise texture
+# or generate a text file with perlin noies values.
 def prompt():
 	print("please choose an option")
 	print("\t1 - Generate sample texture")
