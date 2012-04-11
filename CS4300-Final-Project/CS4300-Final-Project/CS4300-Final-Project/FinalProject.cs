@@ -108,6 +108,10 @@ namespace CS4300_Final_Project
         {
             device.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.DarkSlateBlue, 1.0f, 0);
 
+            effect.Parameters["xView"].SetValue(viewMatrix);
+            effect.Parameters["xProjection"].SetValue(projectionMatrix);
+            effect.Parameters["xWorld"].SetValue(Matrix.Identity);
+
             // TODO: Add your drawing code here
             mXWing.draw(viewMatrix, projectionMatrix);
 
