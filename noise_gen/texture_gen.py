@@ -61,3 +61,8 @@ def generate_texture(color_grid, fname):
 
 	image.save(fname)   
 
+def normalize_rgb(rgb):
+	rgb[0] = rgb[0] / 255.0
+	rgb[1] = rgb[1] / 255.0
+	rgb[2] = rgb[2] / 255.0
+	print rgb
