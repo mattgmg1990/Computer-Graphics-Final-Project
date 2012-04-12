@@ -18,7 +18,7 @@ namespace CS4300_Final_Project
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        GraphicsDevice device;
+        GraphicsDevice mDevice;
         Effect effect;
         Camera mCamera;
 
@@ -26,6 +26,7 @@ namespace CS4300_Final_Project
         Matrix projectionMatrix;
 
         XWing mXWing = new XWing();
+        Terrain mTerrain;
 
         public FinalProject()
         {
@@ -62,13 +63,15 @@ namespace CS4300_Final_Project
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            device = graphics.GraphicsDevice;
+            mDevice = graphics.GraphicsDevice;
             effect = Content.Load<Effect>("effects");
 
+            // Load objects to draw
+            mTerrain = new Terrain(Content);
             mXWing.load(Content, effect);
 
             Rectangle windowBounds = this.Window.ClientBounds;
-            mCamera = new Camera(new Vector3(0, 0, 5), new Vector3(0, 0, 1), new Vector3(0, 1, 0), windowBounds.Width, windowBounds.Height, device.Viewport.AspectRatio);
+            mCamera = new Camera(new Vector3(60, 40, -80), new Vector3(0, 0, 0), new Vector3(0, 1, 0), windowBounds.Width, windowBounds.Height, mDevice.Viewport.AspectRatio);
         }
 
         /// <summary>
@@ -93,7 +96,11 @@ namespace CS4300_Final_Project
 
             // TODO: Add your update logic here
             float timeDifference = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
+
+            // Proccess the input from the user
             mCamera.processInput();
+
+            // Update the view and projection matrices with the output of the camera class
             viewMatrix = mCamera.m_LookAtMatrix;
             projectionMatrix = mCamera.m_ProjectionMatrix;
 
@@ -106,14 +113,33 @@ namespace CS4300_Final_Project
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            device.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.DarkSlateBlue, 1.0f, 0);
+            mDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.Black, 1.0f, 0);
+
+            RasterizerState rs = new RasterizerState();
+            rs.CullMode = CullMode.None;
+            mDevice.RasterizerState = rs;
 
             effect.Parameters["xView"].SetValue(viewMatrix);
             effect.Parameters["xProjection"].SetValue(projectionMatrix);
             effect.Parameters["xWorld"].SetValue(Matrix.Identity);
+            effect.Parameters["xTexture"].SetValue(mTerrain.grassTexture);
 
-            // TODO: Add your drawing code here
-            mXWing.draw(viewMatrix, projectionMatrix);
+            effect.CurrentTechnique = effect.Techniques["Textured"];
+            foreach (EffectPass pass in effect.CurrentTechnique.Passes)
+            {
+                pass.Apply();
+
+                mTerrain.draw(mDevice);
+            }
+
+            effect.CurrentTechnique = effect.Techniques["Colored"];
+            foreach (EffectPass pass in effect.CurrentTechnique.Passes)
+            {
+                pass.Apply();
+
+                mXWing.draw(viewMatrix, projectionMatrix);
+            }
+
 
             base.Draw(gameTime);
         }
