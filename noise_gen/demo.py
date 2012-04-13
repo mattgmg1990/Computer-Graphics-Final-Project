@@ -42,4 +42,16 @@ def generate_wood_texture():
 
 	print 'Done.'
 
-generate_wood_texture()
+def write_perlin_to_file(perlin, width, height):
+	f = open('perlin.txt', 'w')
+	for i in range(width):
+		for j in range(height):
+			if(j == height - 1):
+				f.write(str(perlin[i][j]))
+			else:
+				f.write(str(perlin[i][j]) + ' ')
+		f.write('\n')
+
+	f.close()
+
+generate_cloud_texture()

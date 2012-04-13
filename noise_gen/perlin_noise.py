@@ -3,6 +3,8 @@ from __future__ import with_statement
 
 from random import random
 from math import floor
+from math import cos
+from math import pi
 
 # ------------------------------------------------------------------------
 # If you want to generate plots and experiment with the noise funciton,
@@ -105,6 +107,28 @@ def generate_smooth_noise_2d(base_noise, k):
 
 	return smooth_noise
 
+def generate_smooth_noise_2dcos(base_noise, k):
+
+	width = len(base_noise)
+	height = len(base_noise[0])
+	t = 2**k
+	smooth_noise = []
+
+	for i in range(width):	
+		smooth_noise.append([])
+		x0, x1, xalpha = sample_points(i, t, width)							
+		xalpha = (1-cos(xalpha*pi))/2
+
+		for j in range(height):
+			y0, y1, yalpha = sample_points(j, t, height)
+			yalpha = (1-cos(yalpha*pi))/2
+			a0 = linear_interpolation(base_noise[x0][y0], base_noise[x1][y0], xalpha)
+			a1 = linear_interpolation(base_noise[x0][y1], base_noise[x1][y1], xalpha)
+
+			smooth_noise[i].append(linear_interpolation(a0, a1, yalpha))
+
+	return smooth_noise
+
 # -----------------------------------------
 # Perlin Noise Generation
 # -----------------------------------------
@@ -143,7 +167,7 @@ def perlin_noise_2d(width, height, layers, persistence):
 	for k in range(layers):
 		amplitude *= persistence
 		total_amplitude += amplitude
-		smooth_noise = generate_smooth_noise_2d(base_noise, layers - k - 1)
+		smooth_noise = generate_smooth_noise_2dcos(base_noise, layers - k - 1)
 
 		for i in range(width):
 			for j in range(height):
@@ -155,3 +179,12 @@ def perlin_noise_2d(width, height, layers, persistence):
 
 	return perlin_noise
 
+def wood_texture(width, height, layers):
+	perlin = perlin_noise_2d(width, height, layers, .15)
+
+	for i in range(width):
+		for j in range(height):
+			g = perlin[i][j] * 20
+			perlin[i][j] = g - int(g)
+	
+	return perlin
