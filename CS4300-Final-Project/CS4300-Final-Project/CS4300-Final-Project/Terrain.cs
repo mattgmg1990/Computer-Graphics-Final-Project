@@ -137,7 +137,8 @@ namespace CS4300_Final_Project
         public float getHeight(int worldX, int worldY)
         {
             int terrainX = worldX;
-            int terrainY = Math.Abs(worldY);
+            int terrainY = -1 * (worldY);
+
             return heightData[terrainX, terrainY];
         }
     }

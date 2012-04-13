@@ -150,11 +150,24 @@ namespace CS4300_Final_Project
             m_upVector = Vector3.Transform(m_upVector, RotateYTempMatrix);
             camForward = Vector3.Transform(DefaultForward, RotateYTempMatrix);
 
+            // Save the original position
+            Vector3 originalPosition = m_position;
+
             // Change the position based on the new right and forward vectors
             m_position += m_moveLeftRight * camRight;
             m_position += m_moveBackForward * camForward;
 
-            m_position.Y = getHeightOnTerrain();
+            // If there is no height for this position, we're not walking on the terrain. Stop the camera from strafing that way.
+            try
+            {
+                // Change the height to the new value
+                m_position.Y = getHeightOnTerrain();
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                // Stop the camera by returning it to its original position
+                m_position = originalPosition;
+            }
 
             // reset the moveleftright and movebackforward values
             m_moveLeftRight = 0.0f;
