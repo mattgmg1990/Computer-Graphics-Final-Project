@@ -21,6 +21,9 @@ namespace CS4300_Final_Project
         public Matrix m_LookAtMatrix;
         public Matrix m_ProjectionMatrix;
 
+        // The terrain for the world that this camera will "walk" on
+        private Terrain mTerrain;
+
         // Window height and width 
         private int m_windowHeight;
         private int m_windowWidth;
@@ -63,7 +66,9 @@ namespace CS4300_Final_Project
         /// <param name="m_upVector">The initial up vector</param>
         /// <param name="windowWidth">The width of the application window</param>
         /// <param name="windowHeight">The height of the application window</param>
-        public Camera(Vector3 position, Vector3 target, Vector3 upVector, int windowWidth, int windowHeight, float aspectRatio)
+        /// <param name="aspectRatio">The aspect ratio of this game window</param>
+        /// <param name="terrain">The terrain object that this camera will "walk" on</param>
+        public Camera(Vector3 position, Vector3 target, Vector3 upVector, int windowWidth, int windowHeight, float aspectRatio, Terrain terrain)
         {
             m_position = position;
             m_target = target;
@@ -71,6 +76,7 @@ namespace CS4300_Final_Project
             m_windowWidth = windowWidth;
             m_windowHeight = windowHeight;
             m_aspectRatio = aspectRatio;
+            mTerrain = terrain;
         }
 
         public void processInput()
@@ -148,12 +154,43 @@ namespace CS4300_Final_Project
             m_position += m_moveLeftRight * camRight;
             m_position += m_moveBackForward * camForward;
 
+            m_position.Y = getHeightOnTerrain();
+
             // reset the moveleftright and movebackforward values
             m_moveLeftRight = 0.0f;
             m_moveBackForward = 0.0f;
 
             // update the target vector relative to the new position
             m_target = m_position + m_target;
+        }
+
+        /// <summary>
+        /// For the current X and Z position of this camera, find the height of the terrain, interpolated for the specific position
+        /// </summary>
+        /// <returns>An interpolated height at the current X,Z position of the camera</returns>
+        private float getHeightOnTerrain()
+        {
+            // Current X and Z positions, casted to the nearest int value
+            int x0 = (int)m_position.X;
+            int y0 = (int)m_position.Z;
+
+            // The difference between the current position and its closest int value
+            double dx = m_position.X - x0;
+            double dy = m_position.Z - y0;
+
+            // Subtract from 1 to find the distance from the next hightest integer
+            double omdx = 1 - dx;
+            double omdy = 1 - dy;
+
+            // find the bilinear interpolation between the height values at the data points in the height map
+            // closest to the current position of the camera.
+            double bilinear = omdx * omdy * mTerrain.getHeight(x0, y0) +
+            omdx * dy * mTerrain.getHeight(x0, y0 + 1) +
+            dx * omdy * mTerrain.getHeight(x0 + 1, y0) +
+            dx * dy * mTerrain.getHeight(x0 + 1, y0 + 1);
+
+            // Add 2 to the terrain height so that the camera is above it
+            return (float)bilinear + 2.0f;
         }
 
         

@@ -17,7 +17,7 @@ namespace CS4300_Final_Project
         private Texture2D heightMap;
 
         // A grass texture to paint the scene with
-        public Texture2D grassTexture;
+        private Texture2D texture;
 
         // The vertices of the terrain
         private VertexPositionNormalTexture[] vertices;
@@ -37,7 +37,7 @@ namespace CS4300_Final_Project
             // The content manager will create an array of color objects to store in the heightmap
             heightMap = content.Load<Texture2D>("heightmap");
             // Load the grass texture
-            grassTexture = content.Load<Texture2D>("grass");
+            texture = content.Load<Texture2D>("grass");
             load();
         }
 
@@ -123,6 +123,22 @@ namespace CS4300_Final_Project
             LoadHeightData();
             SetUpVertices();
             SetUpIndices();
+        }
+
+        /// <summary>
+        /// Gets the texture that is used to texture this terrain
+        /// </summary>
+        /// <returns>The texture</returns>
+        public Texture2D getTexture()
+        {
+            return texture;
+        }
+
+        public float getHeight(int worldX, int worldY)
+        {
+            int terrainX = worldX;
+            int terrainY = Math.Abs(worldY);
+            return heightData[terrainX, terrainY];
         }
     }
 }

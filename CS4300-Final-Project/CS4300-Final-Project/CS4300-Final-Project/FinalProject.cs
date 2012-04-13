@@ -71,7 +71,7 @@ namespace CS4300_Final_Project
             mXWing.load(Content, effect);
 
             Rectangle windowBounds = this.Window.ClientBounds;
-            mCamera = new Camera(new Vector3(60, 40, -80), new Vector3(0, 0, 0), new Vector3(0, 1, 0), windowBounds.Width, windowBounds.Height, mDevice.Viewport.AspectRatio);
+            mCamera = new Camera(new Vector3(60, 30, -80), new Vector3(0, 0, 0), new Vector3(0, 1, 0), windowBounds.Width, windowBounds.Height, mDevice.Viewport.AspectRatio, mTerrain);
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace CS4300_Final_Project
             effect.Parameters["xView"].SetValue(viewMatrix);
             effect.Parameters["xProjection"].SetValue(projectionMatrix);
             effect.Parameters["xWorld"].SetValue(Matrix.Identity);
-            effect.Parameters["xTexture"].SetValue(mTerrain.grassTexture);
+            effect.Parameters["xTexture"].SetValue(mTerrain.getTexture());
 
             effect.CurrentTechnique = effect.Techniques["Textured"];
             foreach (EffectPass pass in effect.CurrentTechnique.Passes)
