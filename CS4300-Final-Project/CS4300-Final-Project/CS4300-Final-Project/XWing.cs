@@ -25,7 +25,7 @@ namespace CS4300_Final_Project
 
         public override void draw(Matrix viewMatrix, Matrix projectionMatrix)
         {
-            Matrix worldMatrix = Matrix.CreateScale(0.005f, 0.005f, 0.005f) * Matrix.CreateRotationY(MathHelper.Pi) * Matrix.CreateTranslation(new Vector3(0, 0, 10));
+            Matrix worldMatrix = Matrix.CreateScale(0.01f, 0.01f, 0.01f) * Matrix.CreateRotationY(MathHelper.Pi) * Matrix.CreateTranslation(new Vector3(60, 40, -70));
 
             Matrix[] xwingTransforms = new Matrix[mModel.Bones.Count];
             mModel.CopyAbsoluteBoneTransformsTo(xwingTransforms);

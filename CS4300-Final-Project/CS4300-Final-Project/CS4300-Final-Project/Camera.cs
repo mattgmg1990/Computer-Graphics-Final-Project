@@ -114,7 +114,7 @@ namespace CS4300_Final_Project
                 m_Pitch -= LOOKSPEED;
             }
 
-            //Mouse.SetPosition(centerX, centerY);
+            Mouse.SetPosition(centerX, centerY);
             m_previousMouseState = Mouse.GetState();
             renderCamera();
         }
@@ -170,7 +170,7 @@ namespace CS4300_Final_Project
                 Matrix.CreateLookAt(m_position,
                     m_target, m_upVector);
              m_ProjectionMatrix =
-                Matrix.CreatePerspective(MathHelper.PiOver4, m_aspectRatio, 0.3f, 500.0f);
+                Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, m_aspectRatio, 1.0f, 300.0f);
         }
     }
 }
