@@ -59,7 +59,7 @@ def generate_texture(color_grid, fname):
 			seq = int_sequence(color_grid[i][j])
 			pixels[i,j] = seq
 
-	image.save(fname)   
+	image.save('2d_noise/' + fname)   
 
 def normalize_rgb(rgb):
 	rgb[0] = rgb[0] / 255.0
