@@ -9,10 +9,16 @@ def generate_sample_textures():
 	octaves = 9
 
 	# generate cloud texture
-	gradient = Gradient((1, 1, 1, 1), (0, 0, 1, 1))
+##	gradient = Gradient((1, 1, 1, 1), (0, 0, 1, 1))
+##	p_noise = perlin_noise_2d(w, h, octaves, .5)
+##	color_grid = map_gradient(gradient, p_noise)
+##	generate_texture(color_grid, 'cloud_texture.png')
+
+	# generate snowy ground texture
+	gradient = Gradient((1, 1, 1, 1), ((34.0/255.0), (139.0/255.0), (34.0/255.0), 1))
 	p_noise = perlin_noise_2d(w, h, octaves, .5)
 	color_grid = map_gradient(gradient, p_noise)
-	generate_texture(color_grid, 'cloud_texture.png')
+	generate_texture(color_grid, 'snowy_ground.png')
 
 	# generate wood texture
 	# gradient = Gradient((.62, .32, .17, 1), (.38, .13, .07, 1))
