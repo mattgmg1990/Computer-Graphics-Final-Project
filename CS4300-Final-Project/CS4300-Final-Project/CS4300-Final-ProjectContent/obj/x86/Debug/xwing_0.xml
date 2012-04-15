@@ -2,7 +2,7 @@
 <XnaContent xmlns:Graphics="Microsoft.Xna.Framework.Content.Pipeline.Graphics" xmlns:Framework="Microsoft.Xna.Framework">
   <Asset Type="Graphics:NodeContent">
     <Identity>
-      <SourceFilename>C:\Users\Matt\Documents\Spring 2012\Computer Graphics\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\xwing.x</SourceFilename>
+      <SourceFilename>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\xwing.x</SourceFilename>
       <SourceTool>XImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -107,7 +107,7 @@
   <Resources>
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\Matt\Documents\Spring 2012\Computer Graphics\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\xwing.x</SourceFilename>
+        <SourceFilename>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\xwing.x</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -120,7 +120,7 @@
     </Resource>
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\Matt\Documents\Spring 2012\Computer Graphics\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\xwing.x</SourceFilename>
+        <SourceFilename>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\xwing.x</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -133,7 +133,7 @@
     </Resource>
     <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\Matt\Documents\Spring 2012\Computer Graphics\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\xwing.x</SourceFilename>
+        <SourceFilename>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\xwing.x</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -146,7 +146,7 @@
     </Resource>
     <Resource ID="#Resource4" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\Matt\Documents\Spring 2012\Computer Graphics\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\xwing.x</SourceFilename>
+        <SourceFilename>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\xwing.x</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -159,7 +159,7 @@
     </Resource>
     <Resource ID="#Resource5" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\Matt\Documents\Spring 2012\Computer Graphics\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\xwing.x</SourceFilename>
+        <SourceFilename>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\xwing.x</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -172,7 +172,7 @@
     </Resource>
     <Resource ID="#Resource6" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\Matt\Documents\Spring 2012\Computer Graphics\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\xwing.x</SourceFilename>
+        <SourceFilename>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\xwing.x</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -185,7 +185,7 @@
     </Resource>
     <Resource ID="#Resource7" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\Matt\Documents\Spring 2012\Computer Graphics\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\xwing.x</SourceFilename>
+        <SourceFilename>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\xwing.x</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -198,7 +198,7 @@
     </Resource>
     <Resource ID="#Resource8" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\Matt\Documents\Spring 2012\Computer Graphics\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\xwing.x</SourceFilename>
+        <SourceFilename>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\xwing.x</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>

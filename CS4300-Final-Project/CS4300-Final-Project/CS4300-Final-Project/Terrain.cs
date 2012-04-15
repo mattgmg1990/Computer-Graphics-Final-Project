@@ -37,7 +37,7 @@ namespace CS4300_Final_Project
             // The content manager will create an array of color objects to store in the heightmap
             heightMap = content.Load<Texture2D>("heightmap");
             // Load the grass texture
-            texture = content.Load<Texture2D>("snowy_ground");
+            texture = content.Load<Texture2D>("snowy_terrain");
             load();
         }
 

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Framework="Microsoft.Xna.Framework" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
       <Source>effects.fx</Source>
@@ -7,8 +7,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Matt\Documents\Spring 2012\Computer Graphics\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\effects.xnb</Output>
-      <Time>2012-04-01T11:20:48.4046004-04:00</Time>
+      <Output>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\effects.xnb</Output>
+      <Time>2012-04-15T16:52:38-04:00</Time>
     </Item>
     <Item>
       <Source>xwing.x</Source>
@@ -16,19 +16,101 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Matt\Documents\Spring 2012\Computer Graphics\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\xwing.xnb</Output>
-      <Time>2012-04-01T12:42:12.8269734-04:00</Time>
+      <Output>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\xwing.xnb</Output>
+      <Time>2012-04-15T16:52:38-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\xwing_0.xml</Key>
-        <Value>2012-04-01T18:04:54.6147765-04:00</Value>
+        <Value>2012-04-15T16:54:34.1215969-04:00</Value>
       </Dependency>
+    </Item>
+    <Item>
+      <Source>grass.dds</Source>
+      <Name>grass</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\grass.xnb</Output>
+      <Time>2012-04-15T16:52:38-04:00</Time>
+    </Item>
+    <Item>
+      <Source>heightmap.png</Source>
+      <Name>heightmap</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\heightmap.xnb</Output>
+      <Time>2012-04-15T16:52:38-04:00</Time>
+    </Item>
+    <Item>
+      <Source>wood_texture.png</Source>
+      <Name>wood_texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\wood_texture.xnb</Output>
+      <Time>2012-04-15T16:52:38-04:00</Time>
+    </Item>
+    <Item>
+      <Source>snowy_ground.dds</Source>
+      <Name>snowy_ground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\snowy_ground.xnb</Output>
+      <Time>2012-04-15T16:52:38-04:00</Time>
+    </Item>
+    <Item>
+      <Source>table.fbx</Source>
+      <Name>table</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\table.xnb</Output>
+      <Time>2012-04-15T16:52:38-04:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\table_0.xml</Key>
+        <Value>2012-04-15T16:54:34.7546332-04:00</Value>
+      </Dependency>
+      <Request>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\wood_texture_0.xnb</Request>
     </Item>
     <Item>
       <Source>xwing.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\xwing_0.xml</Output>
-      <Time>2012-04-01T12:42:12.8269734-04:00</Time>
+      <Time>2012-04-15T16:52:38-04:00</Time>
+    </Item>
+    <Item>
+      <Source>table.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\table_0.xml</Output>
+      <Time>2012-04-15T16:52:38-04:00</Time>
+    </Item>
+    <Item>
+      <Source>wood_texture.png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\wood_texture_0.xnb</Output>
+      <Time>2012-04-15T16:52:38-04:00</Time>
+    </Item>
+    <Item>
+      <Source>snowy_terrain.dds</Source>
+      <Name>snowy_terrain</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\snowy_terrain.xnb</Output>
+      <Time>2012-04-15T16:57:18.2149825-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -36,10 +118,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Matt\Documents\Spring 2012\Computer Graphics\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Matt\Documents\Spring 2012\Computer Graphics\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Matt\Documents\Spring 2012\Computer Graphics\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Matt\Documents\Spring 2012\Computer Graphics\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-ProjectContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -68,7 +150,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2012-03-22T19:48:51.5391581-04:00</Value>
+        <Value>2012-03-23T19:03:09.1616634-04:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

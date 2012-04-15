@@ -25,7 +25,7 @@ namespace PerlinBlending
 
             float[][] perlinNoise = NoiseToFloat(image3);
 
-            Color[][] perlinImage = BlendImages(image1, image2, perlinNoise);
+            Color[][] perlinImage = BlendImages(image2, image1, perlinNoise);
 
             SaveImage(perlinImage, "img/perlin_noise_blended.png");
         }
