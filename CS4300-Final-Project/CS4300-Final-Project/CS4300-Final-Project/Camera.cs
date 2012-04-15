@@ -54,8 +54,8 @@ namespace CS4300_Final_Project
         private float m_aspectRatio;
 
         // The movement and look speeds for this camera
-        private static readonly float MOVEMENTSPEED = 0.08f;
-        private static readonly float LOOKSPEED = 0.02f;
+        private static readonly float MOVEMENTSPEED = 0.09f;
+        private static readonly float LOOKSPEED = 0.03f;
 
         /// <summary>
         /// Constructor for the Camera class. 
