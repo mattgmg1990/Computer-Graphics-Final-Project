@@ -26,8 +26,8 @@ namespace CS4300_Final_Project
         Matrix projectionMatrix;
 
         XWing mXWing = new XWing();
-        Terrain mTerrain;
         Table mTable = new Table();
+        Terrain mTerrain;
 
         public FinalProject()
         {
@@ -140,9 +140,8 @@ namespace CS4300_Final_Project
                 pass.Apply();
 
                 mXWing.draw(viewMatrix, projectionMatrix);
+                mTable.draw(viewMatrix, projectionMatrix);
             }
-
-            mTable.draw(viewMatrix, projectionMatrix);
 
             base.Draw(gameTime);
         }
