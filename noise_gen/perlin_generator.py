@@ -5,14 +5,32 @@ from texture_gen import Gradient
 
 # Generates a simple cloud texture from perlin_noise
 def generate_sample_textures():
-	w = h = 256
+	w = h = 512
 	octaves = 9
 
 	# generate cloud texture
-	gradient = Gradient((1, 1, 1, 1), (0, 0, 1, 1))
+	gradient = Gradient((1, 1, 1, 1), ((135.0/255.0), (206.0/255.0), (250.0/255.0), 1))
 	p_noise = perlin_noise_2d(w, h, octaves, .5)
 	color_grid = map_gradient(gradient, p_noise)
 	generate_texture(color_grid, 'cloud_texture.png')
+
+##        # generate black and white texture
+##	gradient = Gradient((0, 0, 0, 1), (1, 1, 1, 1))
+##	p_noise = perlin_noise_2d(w, h, octaves, .3)
+##	color_grid = map_gradient(gradient, p_noise)
+##	generate_texture(color_grid, 'perlin_noise.png')
+
+##        # generate grass and dirt ground texture
+##	gradient = Gradient((.62, .32, .17, 1), ((34.0/255.0), (139.0/255.0), (34.0/255.0), 1))
+##	p_noise = perlin_noise_2d(w, h, octaves, .5)
+##	color_grid = map_gradient(gradient, p_noise)
+##	generate_texture(color_grid, 'grass_and_dirt.png')
+
+##	# generate snowy ground texture
+##	gradient = Gradient((1, 1, 1, 1), ((34.0/255.0), (139.0/255.0), (34.0/255.0), 1))
+##	p_noise = perlin_noise_2d(w, h, octaves, .5)
+##	color_grid = map_gradient(gradient, p_noise)
+##	generate_texture(color_grid, 'snowy_ground.png')
 
 	# generate wood texture
 	# gradient = Gradient((.62, .32, .17, 1), (.38, .13, .07, 1))
