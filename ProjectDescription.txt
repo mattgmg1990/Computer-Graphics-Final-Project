@@ -1,0 +1,35 @@
+Purpose
+-------------------------------------
+The purpose of this project was to implement the perlin noise algorithm
+and demonstrate it's uses through a small interactive demo.
+
+Project Features
+-------------------------------------
+- Can generate 1d and 2d perlin noise of a specified size
+- 3d world which incorporates perlin noise in the following ways:
+	- Height map was generated with perlin noise.
+	- Skydome that that is textured with image generated from perlin noise.
+	- Table model which has a wood texture mapped to it. The wood texture
+	  was made with perlin noise.
+	- Snowy terrain was created by blending two images with perlin noise
+	  values.
+
+Implemenation
+-------------------------------------
+The perlin noise algorithm was implemented in Python and can be found in
+the noise_gen/ directory. Python was chosen for a few reasons. First, it's
+simplicity easily allowed us to make several iterations to improve the
+algorithm results. Second, the Python Imaging Library (PIL) makes
+generating textures very simple. Finally, generating output (whether it is
+a texture or raw data) is also very easy to do by running the script. It
+also makes it easy to modify parameters very quickly.
+
+The 3d demo was created using XNA. XNA provides several convenient tools
+which makes rendering models and mapping textures to models very easy.
+This was ideal since the specifics of model rendering and texture mapping
+was not the focus of our project. The overall class structure for our demo
+was relatively simple as well. Each rendered mesh/model extended an
+abstract class, ModelObject. We also had a camera class to explore our
+environment. In the main program class which XNA provides, we instantiate
+all of our models and camera and desplay the world. For the full details,
+please refer to the class diagram in Docs/classdiagram.png.
