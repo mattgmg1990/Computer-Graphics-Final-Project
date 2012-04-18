@@ -32,7 +32,7 @@ namespace CS4300_Final_Project
             Matrix[] modelTransforms = new Matrix[mModel.Bones.Count];
             mModel.CopyAbsoluteBoneTransformsTo(modelTransforms);
 
-            Matrix worldMatrix = Matrix.CreateTranslation(0, -0.3f, -0.5f) * Matrix.CreateScale(400);
+            Matrix worldMatrix = Matrix.CreateTranslation(0, -0.3f, -0.4f) * Matrix.CreateScale(400);
             foreach (ModelMesh mesh in mModel.Meshes)
             {
                 foreach (Effect currentEffect in mesh.Effects)

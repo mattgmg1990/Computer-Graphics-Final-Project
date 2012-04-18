@@ -5,12 +5,12 @@ from texture_gen import Gradient
 
 # Generates a simple cloud texture from perlin_noise
 def generate_sample_textures():
-	w = h = 512
-	octaves = 9
+	w = h = 1024
+	octaves = 7
 
 	# generate cloud texture
 	gradient = Gradient((1, 1, 1, 1), ((135.0/255.0), (206.0/255.0), (250.0/255.0), 1))
-	p_noise = perlin_noise_2d(w, h, octaves, .5)
+	p_noise = perlin_noise_2d(w, h, octaves, .25)
 	color_grid = map_gradient(gradient, p_noise)
 	generate_texture(color_grid, 'cloud_texture.png')
 
