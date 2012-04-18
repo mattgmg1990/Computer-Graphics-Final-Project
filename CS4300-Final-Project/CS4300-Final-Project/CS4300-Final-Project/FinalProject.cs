@@ -28,6 +28,7 @@ namespace CS4300_Final_Project
         XWing mXWing = new XWing();
         Table mTable = new Table();
         Terrain mTerrain;
+        SkyDome mSkydome = new SkyDome();
 
         public FinalProject()
         {
@@ -71,6 +72,7 @@ namespace CS4300_Final_Project
             mTerrain = new Terrain(Content);
             mXWing.load(Content, effect);
             mTable.load(Content, effect);
+            mSkydome.load(Content, effect);
 
             Rectangle windowBounds = this.Window.ClientBounds;
             mCamera = new Camera(new Vector3(60, 30, -80), new Vector3(0, 0, 0), new Vector3(0, 1, 0), windowBounds.Width, windowBounds.Height, mDevice.Viewport.AspectRatio, mTerrain);
@@ -144,6 +146,7 @@ namespace CS4300_Final_Project
 
                 mXWing.draw(viewMatrix, projectionMatrix);
                 mTable.draw(viewMatrix, projectionMatrix);
+                mSkydome.draw(viewMatrix, projectionMatrix);
             }
 
             base.Draw(gameTime);

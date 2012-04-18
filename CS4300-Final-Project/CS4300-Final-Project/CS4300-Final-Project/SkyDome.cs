@@ -8,33 +8,40 @@ using Microsoft.Xna.Framework.Content;
 
 namespace CS4300_Final_Project
 {
-    class SkyDome
+    class SkyDome : ModelObject
     {
+        // Texture for the clouds
         private Texture2D cloudMap;
 
-        Model skyDome;
-
-        public void load(ContentManager content, Effect effect)
+        public override void load(ContentManager content, Effect effect)
         {
-            skyDome = content.Load<Model>("dome");
-            //skyDome.Meshes[0].MeshParts[0].Effect = effect.Clone(device);
+            mModel = content.Load<Model>("dome");
+            cloudMap = content.Load<Texture2D>("cloud_texture");
+
+            foreach (ModelMesh mesh in mModel.Meshes)
+            {
+                foreach (ModelMeshPart meshPart in mesh.MeshParts)
+                {
+                    meshPart.Effect = effect.Clone();
+                }
+            }
         }
 
-        public void draw(Matrix viewMatrix, Matrix projectionMatrix)
+        public override void draw(Matrix viewMatrix, Matrix projectionMatrix)
         {
-            Matrix[] modelTransforms = new Matrix[skyDome.Bones.Count];
-            skyDome.CopyAbsoluteBoneTransformsTo(modelTransforms);
+            Matrix[] modelTransforms = new Matrix[mModel.Bones.Count];
+            mModel.CopyAbsoluteBoneTransformsTo(modelTransforms);
 
-            Matrix wMatrix = Matrix.CreateTranslation(0, -0.3f, 0) * Matrix.CreateScale(100);
-            foreach (ModelMesh mesh in skyDome.Meshes)
+            Matrix worldMatrix = Matrix.CreateTranslation(0, -0.3f, -0.4f) * Matrix.CreateScale(400);
+            foreach (ModelMesh mesh in mModel.Meshes)
             {
                 foreach (Effect currentEffect in mesh.Effects)
                 {
-                    Matrix worldMatrix = modelTransforms[mesh.ParentBone.Index] * wMatrix;
                     currentEffect.CurrentTechnique = currentEffect.Techniques["Textured"];
-                    currentEffect.Parameters["xWorld"].SetValue(worldMatrix);
+                    currentEffect.Parameters["xWorld"].SetValue(modelTransforms[mesh.ParentBone.Index] * worldMatrix);
                     currentEffect.Parameters["xView"].SetValue(viewMatrix);
                     currentEffect.Parameters["xProjection"].SetValue(projectionMatrix);
+
                     currentEffect.Parameters["xTexture"].SetValue(cloudMap);
                     currentEffect.Parameters["xEnableLighting"].SetValue(false);
                 }
