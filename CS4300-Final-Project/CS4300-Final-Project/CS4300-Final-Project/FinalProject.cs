@@ -106,6 +106,9 @@ namespace CS4300_Final_Project
             viewMatrix = mCamera.m_LookAtMatrix;
             projectionMatrix = mCamera.m_ProjectionMatrix;
 
+            // Move the XWing!
+            mXWing.move();
+
             base.Update(gameTime);
         }
 
