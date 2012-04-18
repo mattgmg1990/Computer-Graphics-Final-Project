@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Camera.cs" />
+    <Compile Include="SkyDome.cs" />
     <Compile Include="Table.cs" />
     <Compile Include="Terrain.cs" />
     <Compile Include="XWing.cs" />

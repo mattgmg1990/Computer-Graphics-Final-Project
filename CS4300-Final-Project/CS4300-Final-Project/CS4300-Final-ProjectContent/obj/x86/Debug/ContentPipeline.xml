@@ -20,8 +20,22 @@
       <Time>2012-04-15T16:52:38-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\xwing_0.xml</Key>
-        <Value>2012-04-15T16:54:34.1215969-04:00</Value>
+        <Value>2012-04-17T19:58:06.9571881-04:00</Value>
       </Dependency>
+    </Item>
+    <Item>
+      <Source>dome.x</Source>
+      <Name>dome</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\dome.xnb</Output>
+      <Time>2012-04-17T21:51:33.7698471-04:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\dome_0.xml</Key>
+        <Value>2012-04-17T21:51:36.1923735-04:00</Value>
+      </Dependency>
+      <Request>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\cloud_texture_0.xnb</Request>
     </Item>
     <Item>
       <Source>grass.dds</Source>
@@ -51,13 +65,22 @@
       <Time>2012-04-15T16:52:38-04:00</Time>
     </Item>
     <Item>
-      <Source>snowy_ground.dds</Source>
-      <Name>snowy_ground</Name>
+      <Source>snowy_terrain.dds</Source>
+      <Name>snowy_terrain</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\snowy_ground.xnb</Output>
-      <Time>2012-04-15T16:52:38-04:00</Time>
+      <Output>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\snowy_terrain.xnb</Output>
+      <Time>2012-04-18T01:21:10-04:00</Time>
+    </Item>
+    <Item>
+      <Source>cloud_texture.png</Source>
+      <Name>cloud_texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\cloud_texture.xnb</Output>
+      <Time>2012-04-18T01:21:10-04:00</Time>
     </Item>
     <Item>
       <Source>table.fbx</Source>
@@ -69,7 +92,7 @@
       <Time>2012-04-15T16:52:38-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\table_0.xml</Key>
-        <Value>2012-04-15T16:54:34.7546332-04:00</Value>
+        <Value>2012-04-17T19:58:07.9994417-04:00</Value>
       </Dependency>
       <Request>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\wood_texture_0.xnb</Request>
     </Item>
@@ -79,6 +102,29 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\xwing_0.xml</Output>
       <Time>2012-04-15T16:52:38-04:00</Time>
+    </Item>
+    <Item>
+      <Source>dome.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\dome_0.xml</Output>
+      <Time>2012-04-17T21:51:33.7698471-04:00</Time>
+    </Item>
+    <Item>
+      <Source>cloud_texture.png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\cloud_texture_0.xnb</Output>
+      <Time>2012-04-18T01:21:10-04:00</Time>
     </Item>
     <Item>
       <Source>table.fbx</Source>
@@ -102,15 +148,6 @@
       <Options>None</Options>
       <Output>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\wood_texture_0.xnb</Output>
       <Time>2012-04-15T16:52:38-04:00</Time>
-    </Item>
-    <Item>
-      <Source>snowy_terrain.dds</Source>
-      <Name>snowy_terrain</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\CS4300-Final-Project\CS4300-Final-Project\CS4300-Final-Project\bin\x86\Debug\Content\snowy_terrain.xnb</Output>
-      <Time>2012-04-15T16:57:18.2149825-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
