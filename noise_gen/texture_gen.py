@@ -45,6 +45,11 @@ def int_sequence(seq):
 
 	return tuple(new_seq)
 
+# Blends pixel with a white color
+def blend_pixel_with_white(seq1, alpha):
+	l1 = list(seq1)
+	return map(lambda x: int(x*(1-alpha) + 255*alpha), l1)
+
 # Converts a 2D grid to an image on the disk. 
 # The grid must contain float values (ranged 0 to 1).
 def generate_texture(color_grid, fname):
@@ -60,6 +65,22 @@ def generate_texture(color_grid, fname):
 			pixels[i,j] = seq
 
 	image.save('2d_noise/' + fname)   
+
+# Interpolates between two textures with the given perlin noise values
+# texture 1 and texture 2 are PIL Image objects
+def blend_textures(texture1, p_noise, width, height):
+	b_texture = Image.new('RGBA', (width, height))
+	b_pixels = b_texture.load()
+	t1_pixels = texture1.load()
+
+	for i in range(width):
+		for j in range(height):
+			# blend_pixel(t1_pixels[i,j], t2_pixels[i,j], p_noise[i][j])
+			alpha = p_noise[i][j]
+			new_pixel = blend_pixel_with_white(t1_pixels[i,j], p_noise[i][j])
+			b_pixels[i,j] = tuple(new_pixel)
+
+	b_texture.save('blended_texture.png')
 
 def normalize_rgb(rgb):
 	rgb[0] = rgb[0] / 255.0
