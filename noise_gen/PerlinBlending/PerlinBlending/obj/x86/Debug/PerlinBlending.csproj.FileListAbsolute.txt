@@ -1,0 +1,5 @@
+C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\noise_gen\PerlinBlending\PerlinBlending\bin\Debug\PerlinBlending.exe
+C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\noise_gen\PerlinBlending\PerlinBlending\bin\Debug\PerlinBlending.pdb
+C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\noise_gen\PerlinBlending\PerlinBlending\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\noise_gen\PerlinBlending\PerlinBlending\obj\x86\Debug\PerlinBlending.exe
+C:\Users\Kenny\Dropbox\Documents\School\NEU\12 Spring\CS4300\Computer-Graphics-Final-Project\noise_gen\PerlinBlending\PerlinBlending\obj\x86\Debug\PerlinBlending.pdb
