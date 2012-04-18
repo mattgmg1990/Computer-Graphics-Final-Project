@@ -14,24 +14,6 @@ def generate_sample_textures():
 	color_grid = map_gradient(gradient, p_noise)
 	generate_texture(color_grid, 'cloud_texture.png')
 
-##        # generate black and white texture
-##	gradient = Gradient((0, 0, 0, 1), (1, 1, 1, 1))
-##	p_noise = perlin_noise_2d(w, h, octaves, .3)
-##	color_grid = map_gradient(gradient, p_noise)
-##	generate_texture(color_grid, 'perlin_noise.png')
-
-##        # generate grass and dirt ground texture
-##	gradient = Gradient((.62, .32, .17, 1), ((34.0/255.0), (139.0/255.0), (34.0/255.0), 1))
-##	p_noise = perlin_noise_2d(w, h, octaves, .5)
-##	color_grid = map_gradient(gradient, p_noise)
-##	generate_texture(color_grid, 'grass_and_dirt.png')
-
-##	# generate snowy ground texture
-##	gradient = Gradient((1, 1, 1, 1), ((34.0/255.0), (139.0/255.0), (34.0/255.0), 1))
-##	p_noise = perlin_noise_2d(w, h, octaves, .5)
-##	color_grid = map_gradient(gradient, p_noise)
-##	generate_texture(color_grid, 'snowy_ground.png')
-
 	# generate wood texture
 	# gradient = Gradient((.62, .32, .17, 1), (.38, .13, .07, 1))
 	# p_noise = wood_texture(512, 512, 9)
@@ -53,12 +35,20 @@ def write_perlin_to_file(perlin, width, height):
 
 	f.close()
 
+def make_snowy_ground():
+	grass = Image.open('textures/grass.png', 'r')
+	print 'generating perlin noise...'
+	p_noise = perlin_noise_2d(512, 512, 6, .25)
+	print 'blending textures'
+	blend_textures(grass, p_noise, 512, 512)
+
 # Simple prompt which gives user the option to generate sample perlin noise texture
 # or generate a text file with perlin noies values.
 def prompt():
 	print("please choose an option")
 	print("\t1 - Generate sample texture")
 	print("\t2 - Output perlin values to text file")
+	print("\t3 - Blend grass and snow texture")
 
 	selected = input('>')
 	if (selected == 1):
@@ -71,6 +61,8 @@ def prompt():
 		print("Generting perlin noise values please wait")
 		p_noise = perlin_noise_2d(width, height, 9, persistence)
 		write_perlin_to_file(p_noise, width, height)
+	elif(selected == 3):
+		make_snowy_ground()
 	else:
 		prompt()
 
